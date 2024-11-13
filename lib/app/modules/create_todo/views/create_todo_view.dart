@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:testapp/app/utils/app_text.dart';
+import 'package:testapp/app/utils/user_message.dart';
 import '../../../responsive/responsive_ui.dart';
 import '../controllers/create_todo_controller.dart';
 
@@ -11,7 +11,7 @@ class CreateTodoView extends GetView<CreateTodoController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Create Task'),
+        title: const Text(AppText.createTaskText),
         centerTitle: true,
       ),
       body: ResponsiveUi(
@@ -44,8 +44,22 @@ class CreateTodoView extends GetView<CreateTodoController> {
                   height: 25.0,
                 ),
 
-                MaterialButton(
-                  onPressed: () {},
+                ElevatedButton(
+                  onPressed: () {
+                    if (controller.titleController.text.isEmpty) {
+                      UserMessage.errorMessage(message: "Title is Required");
+                    } else if (controller.descriptionController.text.isEmpty) {
+                      UserMessage.errorMessage(
+                          message: "Description is Required");
+                    } else {
+                      controller.createTask();
+                      controller.titleController.clear();
+                      controller.descriptionController.clear();
+                      UserMessage.successMessage(
+                          message: "Task created successfully");
+                      Get.toNamed('/home');
+                    }
+                  },
                   child: const Text(AppText.createTaskButtonText),
                 ),
               ],
@@ -57,6 +71,7 @@ class CreateTodoView extends GetView<CreateTodoController> {
   }
 }
 
+///Build a TextField For user Create Task
 Widget _buildTextField({
   required TextEditingController textEditingController,
   required String labelText,
@@ -66,16 +81,10 @@ Widget _buildTextField({
   return TextField(
     keyboardType: TextInputType.text,
     maxLength: maxLength,
-    style: AppText.titleAndSubtitleInputTextStyle,
+    style: AppText.darkTitleAndSubtitleInputTextStyle,
     controller: textEditingController,
     decoration: InputDecoration(
       labelText: labelText,
-      alignLabelWithHint: true,
-      counterText: '',
-      hintFadeDuration: const Duration(milliseconds: 500),
-      contentPadding: const EdgeInsets.all(20.0),
-      labelStyle: AppText.labelAndHintTextStyle,
-      hintStyle: AppText.labelAndHintTextStyle,
       hintText: hintText,
     ),
   );

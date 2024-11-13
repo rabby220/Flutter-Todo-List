@@ -9,21 +9,38 @@ class AppText {
   static const String createTaskButtonText = "Create";
   static const String labelTitleCreateTaskText = "Title";
   static const String hintTitleCreateTaskText = "Title Here";
-   static const String labelSubTitleCreateTaskText = "Description";
-   static const String hintSubTitleCreateTaskText = "Description Here";
+  static const String labelSubTitleCreateTaskText = "Description";
+  static const String hintSubTitleCreateTaskText = "Description Here";
 
-  ///Create Task Text Style
-  static final TextStyle labelAndHintTextStyle = GoogleFonts.actor(
+  ///Create Task light  Text Style
+  static final TextStyle lightLabelAndHintTextStyle = GoogleFonts.actor(
     fontSize: 18.0,
-    color: AppColors.blackColor,fontWeight: FontWeight.bold,
+    color: AppColors.blackColor,
+    fontWeight: FontWeight.bold,
   );
 
-  static final TextStyle titleAndSubtitleInputTextStyle = GoogleFonts.aBeeZee(
+  ///Dark Text Style Label and Hint Input Field
+  static final TextStyle darkLabelAndHintTextStyle = GoogleFonts.actor(
+    fontSize: 18.0,
+    color: AppColors.whiteColor,
+    fontWeight: FontWeight.bold,
+  );
+
+  //Light Theme
+  static final TextStyle lightTitleAndSubtitleInputTextStyle =
+      GoogleFonts.aBeeZee(
     fontSize: 22.0,
     fontWeight: FontWeight.bold,
-    color: AppColors.blackColor,
+    color: AppColors.whiteColor,
   );
 
+  //Dark Theme
+  static final TextStyle darkTitleAndSubtitleInputTextStyle =
+      GoogleFonts.aBeeZee(
+    fontSize: 22.0,
+    fontWeight: FontWeight.bold,
+    color: AppColors.whiteColor,
+  );
 
   ///Light AppBar Text Style
   static final TextStyle appBarLightTextStyle = GoogleFonts.aBeeZee(
@@ -38,4 +55,7 @@ class AppText {
     fontWeight: FontWeight.bold,
     color: AppColors.whiteColor,
   );
+
+
+  
 }
