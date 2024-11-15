@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:testapp/app/utils/app_icons.dart';
 import 'package:testapp/app/utils/app_text.dart';
 import 'package:testapp/app/utils/user_message.dart';
 import '../../../responsive/responsive_ui.dart';
@@ -11,8 +12,13 @@ class CreateTodoView extends GetView<CreateTodoController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(AppIcons.backArrowIcon),
+          onPressed: () {
+            Get.offAndToNamed('/home');
+          },
+        ),
         title: const Text(AppText.createTaskText),
-        centerTitle: true,
       ),
       body: ResponsiveUi(
         child: Padding(
@@ -35,6 +41,7 @@ class CreateTodoView extends GetView<CreateTodoController> {
                 ///Description TextField
                 _buildTextField(
                   textEditingController: controller.descriptionController,
+                  maxLines: 3,
                   labelText: AppText.labelSubTitleCreateTaskText,
                   hintText: AppText.labelSubTitleCreateTaskText,
                   maxLength: 50,
@@ -57,7 +64,7 @@ class CreateTodoView extends GetView<CreateTodoController> {
                       controller.descriptionController.clear();
                       UserMessage.successMessage(
                           message: "Task created successfully");
-                      Get.toNamed('/home');
+                      Get.offAllNamed('/home');
                     }
                   },
                   child: const Text(AppText.createTaskButtonText),
@@ -77,11 +84,12 @@ Widget _buildTextField({
   required String labelText,
   required String hintText,
   required int maxLength,
+  int? maxLines,
 }) {
   return TextField(
     keyboardType: TextInputType.text,
     maxLength: maxLength,
-    style: AppText.darkTitleAndSubtitleInputTextStyle,
+    maxLines: maxLines,
     controller: textEditingController,
     decoration: InputDecoration(
       labelText: labelText,

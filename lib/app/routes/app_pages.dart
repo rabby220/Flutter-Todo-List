@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../modules/create_todo/bindings/create_todo_binding.dart';
 import '../modules/create_todo/views/create_todo_view.dart';
 import '../modules/edit_todo/bindings/edit_todo_binding.dart';
@@ -12,7 +11,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.CREATE_TODO;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(

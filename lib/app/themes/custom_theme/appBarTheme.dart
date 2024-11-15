@@ -9,6 +9,8 @@ class CustomAppBarTheme {
   static AppBarTheme lightAppBarTheme = AppBarTheme(
     backgroundColor: AppColors.blueColor,
     centerTitle: true,
+    elevation: 10.0,
+    shadowColor: AppColors.orangeColor,
     toolbarHeight: 100.0,
     titleTextStyle: AppText.appBarLightTextStyle,
   );
@@ -17,6 +19,8 @@ class CustomAppBarTheme {
   static AppBarTheme darkAppBarTheme = AppBarTheme(
     backgroundColor: AppColors.blackColor,
     centerTitle: true,
+    elevation: 10.0,
+    shadowColor: AppColors.orangeColor,
     toolbarHeight: 100.0,
     titleTextStyle: AppText.appBarDarkTextStyle,
   );

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'app_colors.dart';
 
 class AppText {
+  ///
+  ///
   ///Create Page Text
+  ///
+  ///
   static const String createTaskText = "Create Task";
   static const String createTaskButtonText = "Create";
   static const String labelTitleCreateTaskText = "Title";
@@ -12,7 +15,17 @@ class AppText {
   static const String labelSubTitleCreateTaskText = "Description";
   static const String hintSubTitleCreateTaskText = "Description Here";
 
+  ///Update Task Text
+  ///
+  ///
+  static const String updateTaskText = "Update Task";
+  static const String updateTaskButtonText = "Update";
+  static const String hintTitleUpdateTaskText = "Update Title Here";
+  static const String hintSubTitleUpdateTaskText = "Update Description Here";
+
   ///Create Task light  Text Style
+  ///
+  ///
   static final TextStyle lightLabelAndHintTextStyle = GoogleFonts.actor(
     fontSize: 18.0,
     color: AppColors.blackColor,
@@ -31,7 +44,7 @@ class AppText {
       GoogleFonts.aBeeZee(
     fontSize: 22.0,
     fontWeight: FontWeight.bold,
-    color: AppColors.whiteColor,
+    color: AppColors.blackColor,
   );
 
   //Dark Theme
@@ -41,6 +54,11 @@ class AppText {
     fontWeight: FontWeight.bold,
     color: AppColors.whiteColor,
   );
+
+  ///
+  ///
+  ///
+  /// AppBar Text Style
 
   ///Light AppBar Text Style
   static final TextStyle appBarLightTextStyle = GoogleFonts.aBeeZee(
@@ -56,6 +74,31 @@ class AppText {
     color: AppColors.whiteColor,
   );
 
+  /// light Title Title style
+  static final TextStyle lightTitleTileTextStyle = GoogleFonts.actor(
+    fontSize: 24.0,
+    color: AppColors.blackColor,
+    fontWeight: FontWeight.bold,
+  );
 
-  
+  /// light Sub  Title style
+  static final TextStyle lightSubTitleTileTextStyle = GoogleFonts.actor(
+    fontSize: 18.0,
+    color: AppColors.blackColor,
+    fontWeight: FontWeight.normal,
+  );
+
+  ///  Dark Title style
+  static final TextStyle darkTitleTileTextStyle = GoogleFonts.actor(
+    fontSize: 24.0,
+    color: AppColors.whiteColor,
+    fontWeight: FontWeight.bold,
+  );
+
+  /// Dark Sub  Title style
+  static final TextStyle darkSubTitleTileTextStyle = GoogleFonts.actor(
+    fontSize: 18.0,
+    color: AppColors.whiteColor,
+    fontWeight: FontWeight.normal,
+  );
 }
